@@ -1774,6 +1774,6 @@ EOF
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-perl -0777 -pi -e 's/^plugins=\(.*?\)/plugins=(\n    zsh-autosuggestions\n    zsh-syntax-highlighting\n)/ms' .zshrc
+perl -0777 -pi -e 's/^plugins=\(.*?\)/plugins=(\n    zsh-autosuggestions\n    zsh-syntax-highlighting\n)/ms' ~/.zshrc
 
 echo "Configuration done. Restart shell."
