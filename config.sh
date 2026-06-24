@@ -1786,6 +1786,16 @@ cat << 'EOF' >> ~/.zshrc
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
+
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="150"
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 EOF
 
 echo "Configuration done. Restart shell."
