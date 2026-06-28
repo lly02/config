@@ -18,6 +18,8 @@ cat << 'EOF' > ~/.vim_runtime/my_configs.vim
 set number
 EOF
 
+sudo apt install tmux vim -y
+
 # tmux
 cat << 'EOF' > ~/.tmux.conf
 setw -g mode-keys vi
@@ -45,8 +47,9 @@ EOF
 tmux source-file ~/.tmux.conf
 
 # set up zsh
-sudo apt install zsh
+sudo apt install zsh -y
 chsh -s $(which zsh)
+mv ~/.zshrc ~/.zshrc_old
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
