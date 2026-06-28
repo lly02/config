@@ -49,7 +49,9 @@ tmux source-file ~/.tmux.conf
 # set up zsh
 sudo apt install zsh -y
 chsh -s $(which zsh)
+
 mv ~/.zshrc ~/.zshrc_old
+mv ~/.oh-my-zsh ~/.oh-my-zsh-old
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
