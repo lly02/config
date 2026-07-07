@@ -19,6 +19,10 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 cat << 'EOF' > ~/.vim_runtime/my_configs.vim
 set number
 set clipboard=unnamedplus
+
+let g:NERDTreeWinPos = "left"
+
+map <BS> <C-W>h
 EOF
 
 # tmux
