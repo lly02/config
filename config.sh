@@ -20,7 +20,6 @@ cat << 'EOF' > ~/.vim_runtime/my_configs.vim
 set number
 set clipboard=unnamedplus
 
-let g:NERDTreeWinPos = "left"
 let $LANG = "C.utf8"
 
 map <BS> <C-W>h
