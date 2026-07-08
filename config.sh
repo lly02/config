@@ -24,6 +24,7 @@ let g:NERDTreeWinPos = "left"
 let $LANG = "C.utf8"
 
 map <BS> <C-W>h
+map <leader>g :Ack! 
 EOF
 
 # tmux
