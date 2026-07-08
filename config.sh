@@ -10,7 +10,7 @@ if [ -n "$ADDR" ]; then
 fi
 EOF
 
-sudo apt install tmux vim-gtk3 curl -y
+sudo apt install tmux vim-gtk3 curl ack -y
 
 # vim
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
