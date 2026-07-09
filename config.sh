@@ -23,7 +23,7 @@ set clipboard=unnamedplus
 let $LANG = "C.utf8"
 
 map <BS> <C-W>h
-map <leader>g :Ack! 
+map <leader>g :Ack!
 EOF
 
 # tmux
@@ -56,7 +56,10 @@ tmux source-file ~/.tmux.conf
 sudo apt install zsh -y
 chsh -s $(which zsh)
 
+rm ~/.zshrc_old -f
 mv ~/.zshrc ~/.zshrc_old
+
+rm ~/.oh-my-zsh-old -rf
 mv ~/.oh-my-zsh ~/.oh-my-zsh-old
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sed 's/exec zsh -l//g')"
