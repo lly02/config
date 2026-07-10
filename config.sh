@@ -1796,6 +1796,11 @@ perl -0777 -pi -e 's/^plugins=\(.*?\)/plugins=(\n    zsh-autosuggestions\n    zs
 
 cat << 'EOF' >> ~/.zshrc
 
+#export LANG=C.UTF-8
+
+export PATH=$HOME/.nimble/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+
 setopt autocd
 setopt notify
 
