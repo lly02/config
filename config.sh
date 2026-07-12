@@ -1831,6 +1831,8 @@ fi
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="150"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+eval "$(ssh-agent -s)" > /dev/null
 EOF
 
 echo "Configuration done. Restart shell."
