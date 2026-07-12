@@ -48,6 +48,7 @@ bind-key -r K resize-pane -U "5"
 bind-key -r L resize-pane -R "5"
 
 set-option -g allow-rename off
+set-option -sg escape-time 40 # for win openssh beta
 EOF
 
 tmux source-file ~/.tmux.conf
