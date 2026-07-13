@@ -21,6 +21,7 @@ set number
 set clipboard=unnamedplus
 
 let $LANG = "C.utf8"
+let NERDTreeShowHidden=1
 
 map <BS> <C-W>h
 map <leader>g :Ack!
@@ -49,6 +50,9 @@ bind-key -r L resize-pane -R "5"
 
 set-option -g allow-rename off
 set-option -sg escape-time 40 # for win openssh beta
+
+set-environment -g SSH_AUTH_SOCK "$HOME/.ssh/ssh_auth_sock"
+set-option -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
 EOF
 
 tmux source-file ~/.tmux.conf
@@ -1832,6 +1836,10 @@ fi
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="150"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+fi
 EOF
 
 echo "Configuration done. Restart shell."
