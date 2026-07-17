@@ -49,7 +49,7 @@ bind-key -r K resize-pane -U "5"
 bind-key -r L resize-pane -R "5"
 
 set-option -g allow-rename off
-set-option -sg escape-time 40 # for win openssh beta
+set-option -sg escape-time 100 # for win openssh beta
 
 set-environment -g SSH_AUTH_SOCK "$HOME/.ssh/ssh_auth_sock"
 set-option -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
