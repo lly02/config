@@ -1840,6 +1840,8 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
     ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
 fi
+
+set -o ignoreeof
 EOF
 
 echo "Configuration done. Restart shell."
