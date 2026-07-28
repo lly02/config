@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt update
+sudo apt upgrade -y
+
 # ip widget
 cat << 'EOF' > ~/ip_widget.sh
 #!/bin/bash
