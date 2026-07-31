@@ -1810,6 +1810,7 @@ cat << 'EOF' >> ~/.zshrc
 
 export PATH=$HOME/.nimble/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 
 setopt autocd
 setopt notify
