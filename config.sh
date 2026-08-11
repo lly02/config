@@ -23,7 +23,8 @@ cat << 'EOF' > ~/.vim_runtime/my_configs.vim
 set number
 set clipboard=unnamedplus
 
-highlight Normal ctermbg=NONE guibg=NONE
+hi Normal ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE
 
 let $LANG = "C.utf8"
 let NERDTreeShowHidden=1
