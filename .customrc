@@ -1,0 +1,42 @@
+#export LANG=C.UTF-8
+
+export PATH=$HOME/.nimble/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+
+setopt autocd
+setopt notify
+
+PROMPT_EOL_MARK=""
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=2000
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+unsetopt share_history
+
+alias la='ls -la'
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
+
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="150"
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+fi
+
+set -o ignoreeof
