@@ -1,6 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
+if [ "$EUID" -eq 0 ] && [ -n "$SUDO_USER" ]; then
+    echo "Error: Do not run this script with sudo." >&2
+    echo "Please run it as yourself: $SUDO_USER" >&2
+    echo "  -> Run: bash $0" >&2
+    exit 1
+fi
+
 FULL=false
 
 while getopts 'f' opt; do
@@ -59,7 +66,7 @@ if [ "$FULL" = true ]; then
     sudo apt install bc coreutils gawk git jq playerctl
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    git clone https://github.com/janoamaral/tokyo-night-tmux ~/.config/tmux/plugins/tokyo-night-tmux
+    git clone https://github.com/janoamaral/tokyo-night-tmux ~/.tmux/plugins/tokyo-night-tmux
 fi
 
 import_rc='source ~/.customrc'
