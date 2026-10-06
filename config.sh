@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 FULL=false
 
@@ -28,6 +29,9 @@ cp my_configs.vim ~/.vim_runtime/my_configs.vim
 # tmux
 cp .tmux.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
+
+# tmux theme
+sudo apt install bc coreutils gawk git jq playerctl
 
 # set up zsh
 sudo apt install zsh -y
