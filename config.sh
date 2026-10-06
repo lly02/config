@@ -67,6 +67,8 @@ if [ "$FULL" = true ]; then
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     git clone https://github.com/janoamaral/tokyo-night-tmux ~/.tmux/plugins/tokyo-night-tmux
+
+    ~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
 import_rc='source ~/.customrc'
