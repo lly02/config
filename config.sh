@@ -30,9 +30,6 @@ cp my_configs.vim ~/.vim_runtime/my_configs.vim
 cp .tmux.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
 
-# tmux theme
-sudo apt install bc coreutils gawk git jq playerctl
-
 # set up zsh
 sudo apt install zsh -y
 chsh -s $(which zsh)
@@ -57,6 +54,12 @@ if [ "$FULL" = true ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
     perl -0777 -pi -e 's/^plugins=\(.*?\)/plugins=(\n    zsh-autosuggestions\n    zsh-syntax-highlighting\n)/ms' ~/.zshrc
+
+    # tmux theme
+    sudo apt install bc coreutils gawk git jq playerctl
+
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    git clone https://github.com/janoamaral/tokyo-night-tmux ~/.config/tmux/plugins/tokyo-night-tmux
 fi
 
 import_rc='source ~/.customrc'
