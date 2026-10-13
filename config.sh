@@ -28,7 +28,9 @@ cp ip_widget.sh ~/ip_widget.sh
 sudo apt install tmux vim-gtk3 curl ack -y
 
 # vim
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+if [ ! -d ~/.vim_runtime ]; then
+    git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+fi
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 cp my_configs.vim ~/.vim_runtime/my_configs.vim
@@ -36,6 +38,11 @@ cp my_configs.vim ~/.vim_runtime/my_configs.vim
 # tmux
 cp .tmux.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
+
+# fastfetch
+sudo apt install fastfetch -y
+mkdir -p ~/.config/fastfetch
+cp fastfetch ~/.config/fastfetch -r
 
 # set up zsh
 sudo apt install zsh -y
@@ -63,11 +70,9 @@ if [ "$FULL" = true ]; then
     perl -0777 -pi -e 's/^plugins=\(.*?\)/plugins=(\n    zsh-autosuggestions\n    zsh-syntax-highlighting\n)/ms' ~/.zshrc
 
     # tmux theme
-    sudo apt install bc coreutils gawk git jq playerctl
-
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    git clone https://github.com/janoamaral/tokyo-night-tmux ~/.tmux/plugins/tokyo-night-tmux
-
+    if [ ! -d ~/.tmux/plugins/tpm ]; then
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    fi
     ~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
