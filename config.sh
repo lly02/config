@@ -41,8 +41,8 @@ tmux source-file ~/.tmux.conf
 
 # fastfetch
 sudo apt install fastfetch -y
-mkdir -p ~/.config/fastfetch
-cp fastfetch ~/.config/fastfetch -r
+mkdir -p ~/.config/
+cp fastfetch ~/.config/ -r
 
 # set up zsh
 sudo apt install zsh -y
